@@ -15,10 +15,7 @@ int main(void)
 		if (num != 9)
 		{
 			putchar(',');
-		}
-		else
-		{
-			putchar('$');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
