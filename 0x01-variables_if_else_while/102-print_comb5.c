@@ -1,49 +1,34 @@
 #include <stdio.h>
-/* more headers goes there */
-/* betty style doc for function main goes there */
+#include <stdlib.h>
+
 /**
- * main - Entry point
+ * main - entry point
  *
- * Return: Always 0 (Success)
+ * Return: success(0)
  */
 int main(void)
 {
-	int p = 48, q = 48, y = 48, x = 49;
+	int a, b;
 
-	while (p < 58)
+	for (a = 0; a < 100; a++)
 	{
-		while (q < 58)
+		for (b = 0; b < 100; b++)
 		{
-			while (y < 58)
+			if (a < b)
 			{
-				while (x < 58)
+				putchar((a / 10) + 48);
+				putchar((a % 10) + 48);
+				putchar(' ');
+				putchar((b / 10) + 48);
+				putchar((b % 10) + 48);
+				if (a != 98 || b != 99)
 				{
-					putchar(p);
-					putchar(q);
+					putchar(',');
 					putchar(' ');
-					putchar(y);
-					putchar(x);
-					if (!(p == 57 &&
-						q == 56 &&
-						y == 57 &&
-						x == 57))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					x++;
 				}
-				y++;
-				x = 48;
 			}
-			q++;
-			q = p;
-			x = q + 1;
+
 		}
-		p++;
-		q = 48;
-		y = p;
-		x = q+ 1;
 	}
 	putchar('\n');
 	return (0);
