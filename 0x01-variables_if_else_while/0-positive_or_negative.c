@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
+/* more headers goes there */
 
 /**
  * main - Entry point
@@ -25,5 +26,6 @@ int main(void)
 	{
 		printf("%d is negative", n);
 	}
+	printf("\n");
 	return (0);
 }
