@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
- * main - prints the sum of positive arguments passed to it
+ * main - prints the multiplication of two arguments passed to it
  * @argc: arguments count
  * @argv: array of arguments
  * Return: always 0
@@ -11,29 +10,18 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
-	unsigned int k, sum = 0;
-	char *e;
+	int i = 0, j = 0;
 
-	if (argc > 1)
+	if (argc == 3)
 	{
-		for (i = 1; i < argc; i++)
-		{
-			e = argv[i];
-			for (k = 0; k < strlen(e); k++)
-			{
-				if (e[k] < 48 || e[k] > 57)
-				{
-					printf("Error\n");
-					return (1);
-				}
-			}
-			sum += atoi(e);
-			e++;
-		}
-		printf("%d\n", sum);
+		i = atoi(argv[1]);
+		j = atoi(argv[2]);
+		printf("%d\n", i * j);
 	}
 	else
-		printf("0\n");
+	{
+		printf("Error\n");
+		return (1);
+	}
 	return (0);
 }
