@@ -1,0 +1,24 @@
+# Makefile with some variables not set but working
+
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+
+.PHONY: clean oclean fclean re all $(NAME)
+
+all: $(SRC) $(NAME)
+
+$(NAME): m.h $(OBJ)
+	$(CC) $(OBJ) -o $@
+
+clean:
+	$(RM) *~ $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: oclean all
